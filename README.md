@@ -1,4 +1,4 @@
-# MavenMarket_Project
+# MavenMarket-Project
 
 Open a new Power BI Desktop file, and complete the following steps:
 
@@ -79,4 +79,47 @@ Spot check: You should see data from 1/1/1997 through 12/30/1998 in the "transac
 Confirm that all 7 tables are now accessible within both the RELATIONSHIPS view and the DATA view
 
 
-10) Save your .pbix file (i.e. "MavenMarket_Report")
+PART 2: Creating the Data Model
+Using the report you created in Part 1, complete the following steps:
+
+
+
+1) In the MODEL view, arrange your tables with the lookup tables above the data tables
+
+Connect Transaction_Data to Customers, Products, and Stores using valid primary/foreign keys 
+
+Connect Transaction_Data to Calendar using both date fields, with an inactive "stock_date" relationship
+
+Connect Return_Data to Products, Calendar, and Stores using valid primary/foreign keys
+
+Connect Stores to Regions as a "snowflake" schema
+
+
+
+2) Confirm the following:
+
+All relationships follow one-to-many cardinality, with primary keys (1) on the lookup side and foreign keys (*) on the data side
+
+Filters are all one-way (no two-way filters)
+
+Filter context flows "downstream" from lookup tables to data tables
+
+Data tables are connected via shared lookup tables (not directly to each other)
+
+
+
+3) Hide all foreign keys in both data tables from Report View, as well as "region_id" from the Stores table
+
+
+
+4) In the DATA view, complete the following:
+
+Update all date fields (across all tables) to the "M/d/yyyy" format using the formatting tools in the Modeling tab
+
+Update "product_retail_price", "product_cost", and "discount_price" to Currency ($ English) format
+
+In the Customers table, categorize "customer_city" as City, "customer_postal_code" as Postal Code, and "customer_country" as Country/Region
+
+In the Stores table, categorize "store_city" as City, "store_state" as State or Province, "store_country" as Country/Region, and "full_address" as Address 
+
+
