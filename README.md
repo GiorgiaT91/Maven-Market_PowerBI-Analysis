@@ -2,7 +2,7 @@
 
 | |
 |:---:|
-|  |
+| ![Maven-Market_PowerBI-Analysis](/Immagini/Maven Market first page.png) |
 
 
 ## Introduction to the Project
