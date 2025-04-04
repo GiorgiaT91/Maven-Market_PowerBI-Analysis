@@ -36,7 +36,7 @@ Below is an overview of the key tables in the database and their descriptions:
 
 In this project, several steps were undertaken to prepare and connect data sources in Power BI:
 
-1. **Configuration Settings**: Updated Power BI settings to ensure data integrity, such as turning off auto-detection of relationships and setting the locale for imports.
+1. **Configuration Settings**: updated Power BI settings to ensure data integrity, such as turning off auto-detection of relationships and setting the locale for imports.
 
 2. **Data Connection and Preparation**:
    - Connected to various CSV files including Customers, Products, Stores, Regions, Calendar, and Returns.
@@ -76,7 +76,7 @@ This section outlines the steps taken to build and refine the data model:
    - Connected data tables indirectly through shared lookup tables to avoid direct connections that could complicate the model.
 
 3. **Data Privacy and Clarity**:
-   - Hid foreign key fields in the report view to prevent confusion and maintain a clean visual space.
+   - Hide foreign key fields in the report view to prevent confusion and maintain a clean visual space.
 
 4. **Data Formatting and Categorization**:
    - Updated date fields across all tables to "M/d/yyyy" format to ensure consistency.
@@ -94,7 +94,7 @@ This section outlines the steps taken to build and refine the data model:
 In this phase of the project, numerous calculated columns and DAX measures were added to enhance the data model and provide deeper insights into the dataset:
 
 1. **Calculated Columns**:
-   - Added various calculated columns across tables like Calendar, Customers, Products, and Stores to enrich the data attributes. Examples include identifying weekends, calculating current age, customer priorities, price tiers, and years since the last store remodel.
+   - Added various calculated columns across tables like Calendar, Customers, Products and Stores to enrich the data attributes. Examples include identifying weekends, calculating current age, customer priorities, price tiers, and years since the last store remodel.
 
 ```DAX
 Current Age = 
