@@ -5,7 +5,7 @@
 | ![Maven Market Dashboard](/Immagini/Maven-Market-first-page.png) |
 
 ## Introduction to the Project
-In completion of the **Microsoft Power BI Desktop for Business Intelligence** course on ***Udemy***, I analyzed data from Maven Market, a multi-national grocery chain with locations in Canada, Mexico and the United States.
+In completion of the [**Microsoft Power BI Desktop for Business Intelligence**](https://www.udemy.com/course/microsoft-power-bi-up-running-with-power-bi-desktop/?couponCode=KEEPLEARNING) course on ***Udemy***, I analyzed data from Maven Market, a multi-national grocery chain with locations in Canada, Mexico and the United States.
 
 ---
 
