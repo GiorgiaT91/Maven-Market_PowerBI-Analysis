@@ -353,27 +353,29 @@ Adjusted Profit =
 
 The final phase of the project involved creating and refining the visual components of the Power BI report, ensuring that data insights are clearly communicated:
 
-1. **Setup and Branding**:
-   - Renamed the primary tab to "Topline Performance" and added the Maven Market logo to establish brand presence.
+1. **Dashboard Overview**:
+The main dashboard, titled "Topline Performance," displays key KPIs such as Total Revenue, Total Profit, Total Transactions, and Return Rate. Monthly revenue trends are shown, with comparisons to the previous month and monthly targets highlighted.
 
-2. **Matrix and KPI Visuals**:
-   - Inserted a Matrix visual displaying Total Transactions, Total Profit, Profit Margin, and Return Rate by product brand, enhanced with conditional formatting and a visual level Top N filter to focus on the top 30 brands.
-   - Added KPI Cards to track Total Transactions, Total Profit, and Total Returns, each compared against the last month's figures, with appropriate color coding and formatting for clarity and emphasis.
+2. **Analysis by Product Brand**:
+A Matrix visual displays Total Transactions, Total Profit, Profit Margin, and Return Rate segmented by product brand. Conditional formatting highlights key performances, using data bars and color scales (from white to green for profit margin and from white to red for return rate).
 
-3. **Geographic and Time-Series Analysis**:
-   - Implemented a Map visual to show Total Transactions by store city, coupled with a slicer for store country to filter the data interactively.
-   - Accompanied the map with a Treemap visual to further break down transactions by country and enable drill-up/drill-down through state and city levels.
-   - Added a Column Chart to display the Weekly Revenue Trending for the year 1998, using a report level filter.
+3. **Geographic Insights**:
+A Map visual illustrates Total Transactions by store city, with a country slicer for the store that enables interactive data filtering. Adjacent to the map, a Treemap breaks down Total Transactions by store country, with capabilities to further drill down through state and city.
 
-4. **Target Comparisons**:
-   - Placed a Gauge Chart to visually compare Total Revenue against the Revenue Target, fine-tuning the display to highlight performance against goals.
+4. **Time-Series and Revenue Analysis**:
+A Line Chart shows Weekly Revenue Trending for the year 1998. KPI cards show the monthly trends for Revenue, profit and Returns against the targets, providing an instant visualization of performance relative to goals.
 
-5. **Interactivity and User Engagement**:
-   - Adjusted the Matrix interactions to prevent it from influencing the Treemap visual, enhancing user control over data exploration.
-   - Set up a bookmark for the "Portland 1000 Sales" scenario, linking detailed notes and actionable insights with a user-friendly navigation button to enhance the interactive report experience.
+5. **Customer and Transaction Insights**:
+Detailed information on customers and transactions is presented, including the Top 100 customers by total transactions and revenue. Detailed analyses of transactions by occupation and income level offer deep insights into customer behavior.
 
-6. **Documentation and Insights**:
-   - Created a dedicated "Notes" page to document additional insights and observations, ensuring all relevant information is accessible and well-organized within the report.
+6. **Drill-Through and Bookmarks**:
+Drill-through options are implemented to examine specific product details such as transactions, revenue, and profits achieved against monthly targets. Bookmarks are used to save and share specific insights, like the detailed analysis for the city of Portland which recorded significant sales.
+
+7. **Performance Insights**:
+Performance insights highlight the product with the highest profit margin and the highest return rates in specific regions, providing critical data for strategic decisions.
+
+8. **Numerical Parameter for Adjusted Profit**:
+A numerical parameter has been introduced on the product detail page, allowing users to view the adjusted profit, enhancing the analytical depth and user interactivity of the report.
 
 These steps resulted in a dynamic and insightful report that not only highlights key data points but also provides interactive tools for users to explore and understand the data in depth.
 
