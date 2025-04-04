@@ -57,7 +57,7 @@ In this project, several steps were undertaken to prepare and connect data sourc
 
 | |
 |:---:|
-|  |
+| ![Power Query Overview](/Immagini/PowerQuery.png) |
 
 ---
  
@@ -85,7 +85,7 @@ This section outlines the steps taken to build and refine the data model using t
 
 | |
 |:---:|
-|  |
+| ![Data Model](/Immagini/DataModel.png) |
 
 ---
 
