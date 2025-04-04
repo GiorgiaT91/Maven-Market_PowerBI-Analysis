@@ -377,6 +377,10 @@ The final phase of the project involved creating and refining the visual compone
 
 These steps resulted in a dynamic and insightful report that not only highlights key data points but also provides interactive tools for users to explore and understand the data in depth.
 
+| |
+|:---:|
+| ![Maven Market Dashboard](/Immagini/ProductDetail.png) |
+
 ---
 
 ## Power BI Dashboard Link
