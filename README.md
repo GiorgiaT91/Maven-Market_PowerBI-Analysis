@@ -147,7 +147,7 @@ if('Calendar'[Nome del giorno] IN {"Sunday","Saturday"}, "Y", "N")
 2. **Creation of a Dedicated Measure Table**:
    - For cleanliness and clarity, a dedicated table named "***Measure Table***" (a best practice I learned within the course) was created to house all the DAX measures. This centralized location aids in managing and organizing measures separately from the data tables.
 
-3. **DAX Measures in Report View**:
+3. **DAX Measures**:
    - Developed key performance measures such as "Quantity Sold", "Total Transactions", "Return Rate", "Weekend Transactions", and "Total Profit".
    - Implemented advanced calculations like "YTD Revenue", "60-Day Revenue", "Revenue Target", and measures to track last month's performance metrics.
    - Each measure was carefully formatted (e.g., currency, percentage) and tested with spot checks to ensure accuracy against expected values.
