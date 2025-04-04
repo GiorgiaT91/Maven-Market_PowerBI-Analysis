@@ -54,7 +54,7 @@ In this project, several steps were undertaken to prepare and connect data sourc
 
 5. **Finalization**:
    - Disabled refresh on certain data tables to optimize performance.
-   - Saved the final report as "MavenMarket_Report.pbix" ensuring all tables are correctly linked and accessible within Power BI's relationship and data views.
+   - Saved the final report ensuring all tables are correctly linked and accessible within Power BI's relationship and data views.
 
 | |
 |:---:|
@@ -84,8 +84,9 @@ This section outlines the steps taken to build and refine the data model using t
    - Formatted key financial metrics like retail price and cost to Currency format for better readability and analysis.
    - Categorized geographical data within Customers and Stores tables to enhance geographic reporting capabilities.
 
-5. **Final Touches**:
-   - Saved the updated data model as a Power BI (.pbix) file ensuring all configurations and formatting were preserved for reporting and analysis purposes.
+| |
+|:---:|
+|  |
 
 ---
 
@@ -145,19 +146,207 @@ if('Calendar'[Nome del giorno] IN {"Sunday","Saturday"}, "Y", "N")
 ```
 
 2. **Creation of a Dedicated Measure Table**:
-   - For cleanliness and clarity, a dedicated table named "Measure Table" was created to house all the DAX measures. This centralized location aids in managing and organizing measures separately from the data tables.
+   - For cleanliness and clarity, a dedicated table named "***Measure Table***" was created to house all the DAX measures. This centralized location aids in managing and organizing measures separately from the data tables.
 
 3. **DAX Measures in Report View**:
    - Developed key performance measures such as "Quantity Sold", "Total Transactions", "Return Rate", "Weekend Transactions", and "Total Profit".
    - Implemented advanced calculations like "YTD Revenue", "60-Day Revenue", "Revenue Target", and measures to track last month's performance metrics.
    - Each measure was carefully formatted (e.g., currency, percentage) and tested with spot checks to ensure accuracy against expected values.
 
+```DAX
+Total Transactions = COUNTROWS(Transaction_Data)
+```
+
+```DAX
+Total Revenue = 
+sumx(Transaction_Data,
+Transaction_Data[quantity] *
+related(Products[product_retail_price]))
+```
+
+```DAX
+Total Returns = COUNTROWS(Returns_Data)
+```
+
+```DAX
+Total Profit = 
+[Total Revenue] - [Total Cost]
+```
+
+```DAX
+Total Customers = 
+DISTINCTCOUNT(Transaction_Data[customer_id])
+```
+
+```DAX
+Total Cost = 
+sumx(Transaction_Data,
+Transaction_Data[quantity] *
+related(Products[product_cost]))
+```
+
+```DAX
+Quantity Sold = SUM(Transaction_Data[quantity])
+```
+
+```DAX
+Quantity Returned = sum(Returns_Data[quantity])
+```
+
+```DAX
+All Transactions = 
+calculate(
+    [Total Transactions],
+    all(Transaction_Data))
+```
+
+```DAX
+All Returns = 
+calculate(
+    [Total Returns],
+    ALL(Returns_Data))
+```
+
+```DAX
+Average Retail Price = 
+AVERAGE(Products[product_retail_price])
+```
+
+```DAX
+Profit Margin = 
+[Total Profit] / [Total Revenue]
+```
+
+```DAX
+Last Month Transactions = 
+calculate([Total Transactions], DATEADD('Calendar'[date], -1, MONTH))
+```
+
+```DAX
+Last Month Revenue = 
+calculate([Total Revenue], DATEADD('Calendar'[date], -1, MONTH))
+```
+
+```DAX
+Last Month Returns = 
+calculate([Total Returns], DATEADD('Calendar'[date], -1, MONTH))
+```
+
+```DAX
+Last Month Profit = 
+calculate([Total Profit], DATEADD('Calendar'[date], -1, MONTH))
+```
+
+```DAX
+Profit Target Gap = 
+[Total Profit] - [Last Month Profit]
+```
+
+```DAX
+Profit Target Gap with Arrow = 
+var uparrow = UNICHAR(129129)
+var downarrow = UNICHAR(129131)
+var profitgap = [Profit Target Gap]
+
+return 
+IF(profitgap < 0,
+FORMAT(ROUND(profitgap,0),"$#,###")&" "&downarrow,
+FORMAT(ROUND(profitgap,0),"$#,###")&" "&uparrow)
+```
+
+```DAX
+Revenue Target = 
+[Last Month Revenue] * 1.05
+```
+
+```DAX
+Revenue Target Gap = 
+[Total Revenue] - [Revenue Target]
+```
+
+```DAX
+Revenue Target Gap with Arrow = 
+var uparrow = UNICHAR(129129)
+var downarrow = UNICHAR(129131)
+var revenuegap = [Revenue Target Gap]
+
+return 
+IF(revenuegap < 0,
+FORMAT(ROUND(revenuegap,0),"$#,###")&" "&downarrow,
+FORMAT(ROUND(revenuegap,0),"$#,###")&" "&uparrow)
+```
+
+```DAX
+Return Rate = 
+[Quantity Returned] / [Quantity Sold]
+```
+
+```DAX
+Returns Target Gap = 
+[Total Returns] - [Last Month Returns]
+```
+
+```DAX
+Return Target Gap with Arrow = 
+var uparrow = UNICHAR(129129)
+var downarrow = UNICHAR(129131)
+var returngap = [Returns Target Gap]
+
+return 
+IF(returngap < 0,
+FORMAT(ROUND(returngap,0),"#,###")&" "&downarrow,
+FORMAT(ROUND(returngap,0),"#,###")&" "&uparrow)
+```
+
+```DAX
+Unique Customers = 
+DISTINCTCOUNT(Customers[customer_id])
+```
+
+```DAX
+Unique Products = 
+DISTINCTCOUNT(Products[product_name])
+```
+
+```DAX
+Weekend Transactions = 
+calculate([Total Transactions],
+filter('Calendar', 'Calendar'[Weekend] = "Y"))
+```
+
+```DAX
+YTD Revenue = 
+calculate([Total Revenue], DATESYTD('Calendar'[date]))
+```
+
+```DAX
+% Weekend Transactions = 
+[Weekend Transactions] / [Total Transactions]
+```
+
+```DAX
+60-day Revenue = 
+calculate([Total Revenue],DATESINPERIOD('Calendar'[date], MAX('Calendar'[date]), -60, DAY))
+```
+
+```DAX
+Adjusted Price = [Average Retail Price] * (1 + 'Price Adjustment (%)'[Valore Price Adjustment (%)])
+```
+
+```DAX
+Adjusted Revenue = 
+sumx(Transaction_Data,
+Transaction_Data[quantity] *
+[Adjusted Price])
+```
+
+```DAX
+Adjusted Profit = 
+[Adjusted Revenue] - [Total Cost]
+```
+
 4. **Spot Checks and Validation**:
    - Conducted several spot checks to validate the calculations, such as total sales, return rates, and revenue targets, ensuring the measures reflect accurate and meaningful insights.
-
-| |
-|:---:|
-|  |
 
 ---
 
