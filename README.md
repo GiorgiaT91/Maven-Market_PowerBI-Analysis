@@ -63,7 +63,7 @@ In this project, several steps were undertaken to prepare and connect data sourc
  
 ## Creating the Data Model
 
-This section outlines the steps taken to build and refine the data model using the Power BI report developed in the initial phase:
+This section outlines the steps taken to build and refine the data model:
 
 1. **Model Configuration**:
    - Arranged tables in the MODEL view, placing lookup tables above data tables for clarity.
@@ -145,7 +145,7 @@ if('Calendar'[Nome del giorno] IN {"Sunday","Saturday"}, "Y", "N")
 ```
 
 2. **Creation of a Dedicated Measure Table**:
-   - For cleanliness and clarity, a dedicated table named "***Measure Table***" was created to house all the DAX measures. This centralized location aids in managing and organizing measures separately from the data tables.
+   - For cleanliness and clarity, a dedicated table named "***Measure Table***" (a best practice I learned within the course) was created to house all the DAX measures. This centralized location aids in managing and organizing measures separately from the data tables.
 
 3. **DAX Measures in Report View**:
    - Developed key performance measures such as "Quantity Sold", "Total Transactions", "Return Rate", "Weekend Transactions", and "Total Profit".
@@ -354,39 +354,32 @@ Adjusted Profit =
 The final phase of the project involved creating and refining the visual components of the Power BI report, ensuring that data insights are clearly communicated:
 
 1. **Dashboard Overview**:
-The main dashboard, titled "Topline Performance," displays key KPIs such as Total Revenue, Total Profit, Total Transactions, and Return Rate. Monthly revenue trends are shown, with comparisons to the previous month and monthly targets highlighted.
+The main dashboard, titled "Exec Dashboard" displays key KPIs such as Total Revenue, Total Profit, Total Transactions, and Return Rate. Monthly revenue trends are shown, with comparisons to the previous month and monthly targets highlighted. A Line Chart shows Weekly Revenue Trending for the period 1997-1998. A Matrix visual displays Total Transactions, Total Profit, Profit Margin, and Return Rate segmented by product brand. Conditional formatting highlights key performances, using data bars and color scales (from white to green for profit margin and from white to red for return rate).
 
-2. **Analysis by Product Brand**:
-A Matrix visual displays Total Transactions, Total Profit, Profit Margin, and Return Rate segmented by product brand. Conditional formatting highlights key performances, using data bars and color scales (from white to green for profit margin and from white to red for return rate).
-
-3. **Geographic Insights**:
+2. **Geographic Insights**:
 A Map visual illustrates Total Transactions by store city, with a country slicer for the store that enables interactive data filtering. Adjacent to the map, a Treemap breaks down Total Transactions by store country, with capabilities to further drill down through state and city.
 
-4. **Time-Series and Revenue Analysis**:
-A Line Chart shows Weekly Revenue Trending for the year 1998. KPI cards show the monthly trends for Revenue, profit and Returns against the targets, providing an instant visualization of performance relative to goals.
-
-5. **Customer and Transaction Insights**:
+3. **Customer and Transaction Insights**:
 Detailed information on customers and transactions is presented, including the Top 100 customers by total transactions and revenue. Detailed analyses of transactions by occupation and income level offer deep insights into customer behavior.
 
-6. **Drill-Through and Bookmarks**:
-Drill-through options are implemented to examine specific product details such as transactions, revenue, and profits achieved against monthly targets. Bookmarks are used to save and share specific insights, like the detailed analysis for the city of Portland which recorded significant sales.
+4. **Drill-Through and Bookmarks**:
+Drill-through options are implemented to examine specific **product details** such as transactions, revenue, and profits achieved against monthly targets. 
 
-7. **Performance Insights**:
-Performance insights highlight the product with the highest profit margin and the highest return rates in specific regions, providing critical data for strategic decisions.
-
-8. **Numerical Parameter for Adjusted Profit**:
+5. **Numerical Parameter for Adjusted Profit**:
 A numerical parameter has been introduced on the product detail page, allowing users to view the adjusted profit, enhancing the analytical depth and user interactivity of the report.
+
+6. **Performance Insights**:
+Performance insights highlight the product with the highest profit margin and the highest return rates in specific regions, providing critical data for strategic decisions. Bookmarks are used to save and share specific insights, like the detailed analysis for the city of Portland which recorded significant sales.
 
 These steps resulted in a dynamic and insightful report that not only highlights key data points but also provides interactive tools for users to explore and understand the data in depth.
 
-| |
-|:---:|
 | ![Maven Market Dashboard](/Immagini/ProductDetail.png) |
-
+|:---:|
+| *Product Detail page overview* |
 ---
 
 ## Power BI Dashboard Link
-Click the link to view the [Dashboard](https://app.powerbi.com/view?r=eyJrIjoiNGQ2MjIyYjAtYzE0YS00OWQzLWE1NzgtN2I4NTY0N2MxYWU2IiwidCI6ImM5NDI0M2ViLTZmMGUtNDU2Ni1hMjk2LWI1ZGZjOWQyNTczYiIsImMiOjh9&pageName=1458df3c202a09cd95d1).
+Click the link to view the [Dashboard](https://app.powerbi.com/view?r=eyJrIjoiNTQ1OTljZDktYTJlYS00ZDYyLTk4OTItMzcyNjU5NzhhN2EwIiwidCI6ImM5NDI0M2ViLTZmMGUtNDU2Ni1hMjk2LWI1ZGZjOWQyNTczYiIsImMiOjh9&pageName=9142421c0a41c2834740).
 
 ---
 
