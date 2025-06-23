@@ -387,7 +387,7 @@ Click the link to view the [Dashboard](https://app.powerbi.com/view?r=eyJrIjoiNT
 Hi folks!
 I am Giorgia and I am a real passionate about DATA! 
 
-This is my first dashboard in Power BI, I am more than open to criticisms and tips!
+I am more than open to criticisms and tips on my dashboard!
 
 Let's stay in contact!
 
